@@ -1,0 +1,235 @@
+.jobs-container {
+  background-color: black;
+  height: 90vh;
+  padding: 20px;
+  overflow: auto;
+}
+/**/
+.mobile-search-input-container {
+  border: 1px solid #7e858e;
+  height: 35px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.desktop-search-input-container {
+  display: none;
+}
+.search-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+  color: white;
+  width: 85%;
+}
+.search-icon-btn {
+  background-color: #202020;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  margin: 1px;
+}
+.search-icon {
+  color: white;
+}
+/**/
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.profile-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  height: 200px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.profile-image {
+  width: 20%;
+}
+.profile-name {
+  color: #6366f1;
+  font-family: roboto;
+  font-size: 22px;
+  margin: 5px;
+}
+.profile-bio {
+  color: #202020;
+  font-family: roboto;
+  margin: 5px;
+}
+.retry-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+.retry-btn {
+  height: 35px;
+  width: 90px;
+  background-color: #6366f1;
+  color: white;
+  font-family: roboto;
+  border-radius: 6px;
+  border-width: 0;
+  cursor: pointer;
+}
+/**/
+.employment-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.hr-line {
+  width: 100%;
+}
+.employment-heading {
+  color: white;
+  font-family: roboto;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.employment-list-container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.employment-list {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.checkbox-input {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}
+.checkbox-label {
+  color: #f1f5f9;
+  font-family: roboto;
+  font-size: 16px;
+}
+/**/
+.salaryrange-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.hr-line {
+  width: 100%;
+}
+.salaryrange-heading {
+  color: white;
+  font-family: roboto;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.salaryrange-list-container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.salaryrange-list {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.radio-input {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}
+.radio-label {
+  color: #f1f5f9;
+  font-family: roboto;
+  font-size: 16px;
+}
+/**/
+.jobslist-container {
+  list-style-type: none;
+  padding: 0;
+}
+.no-jobs-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.no-jobs-img {
+  width: 60%;
+}
+
+.no-jobs-heading {
+  color: #ffffff;
+  font-family: roboto;
+  text-align: center;
+}
+
+.no-jobs-description {
+  color: #f1f5f9;
+  font-family: roboto;
+  text-align: center;
+  font-size: 12px;
+  margin: 0;
+}
+.failure-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.failure-view-img {
+  width: 60%;
+}
+
+.failure-view-heading {
+  color: #ffffff;
+  font-family: roboto;
+  text-align: center;
+}
+
+.failure-view-description {
+  color: #f1f5f9;
+  font-family: roboto;
+  text-align: center;
+  font-size: 12px;
+}
+
+/**/
+@media (min-width: 768px) {
+  .jobs-container {
+    display: flex;
+  }
+  .content-1 {
+    width: 30%;
+    margin-right: 20px;
+  }
+  .mobile-search-input-container {
+    display: none;
+  }
+  .desktop-search-input-container {
+    border: 1px solid #7e858e;
+    height: 35px;
+    width: 400px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .content-2 {
+    width: 70%;
+  }
+}

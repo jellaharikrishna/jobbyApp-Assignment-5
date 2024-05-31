@@ -1,0 +1,113 @@
+.similar-job-card {
+  background-color: #202020;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .similar-job-card {
+    width: 30%;
+    margin-right: 20px;
+  }
+}
+/**/
+
+.similar-job-logo-title-container {
+  display: flex;
+  margin-bottom: 0;
+}
+.similar-job-company-logo {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+.similar-job-title-rating-card {
+}
+.similar-job-title-heading {
+  color: white;
+  font-family: roboto;
+  font-size: 22px;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .similar-job-title-heading {
+    font-size: 26px;
+  }
+}
+.similar-job-rating-card {
+  display: flex;
+  align-items: center;
+}
+.similar-job-star-rating-icon {
+  color: gold;
+  margin-right: 5px;
+  padding: 0;
+}
+.similar-job-rating-heading {
+  color: white;
+  font-family: roboto;
+}
+/**/
+.similar-job-location-package-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+.similar-job-location-employment-type-card {
+  display: flex;
+  align-items: center;
+}
+.similar-job-location-card {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.similar-job-location-icon {
+  height: 20px;
+  width: 20px;
+  color: #ffffff;
+  margin-right: 5px;
+}
+.similar-job-location-heading {
+  color: #cbd5e1;
+  font-family: roboto;
+}
+
+.similar-job-employment-type-card {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.similar-job-employment-type-icon {
+  height: 20px;
+  width: 20px;
+  color: #ffffff;
+  margin-right: 10px;
+}
+.similar-job-employment-type-heading {
+  color: #cbd5e1;
+  font-family: roboto;
+}
+
+/**/
+.similar-job-description-container {
+}
+.similar-job-description-heading {
+  color: white;
+  font-family: roboto;
+  font-size: 22px;
+}
+.similar-job-description-paragraph {
+  color: #f1f5f9;
+  font-family: roboto;
+}
+
+@media (min-width: 768px) {
+  .similar-job-description-heading {
+    font-size: 24px;
+  }
+  .similar-job-description-paragraph {
+    font-size: 14px;
+  }
+}

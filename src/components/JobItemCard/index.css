@@ -1,0 +1,102 @@
+.job-card-link {
+  text-decoration: none;
+}
+
+.jobslist-card {
+  background-color: #202020;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 20px;
+}
+.logo-title-container {
+  display: flex;
+  margin-bottom: 0;
+}
+.company-logo {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+.title-rating-card {
+}
+.title-heading {
+  color: white;
+  font-family: roboto;
+  font-size: 22px;
+  margin: 0;
+}
+.rating-card {
+  display: flex;
+  align-items: center;
+}
+.star-rating-icon {
+  color: gold;
+  margin-right: 5px;
+  padding: 0;
+}
+.rating-heading {
+  color: white;
+  font-family: roboto;
+}
+/**/
+.location-package-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+.location-employment-type-card {
+  display: flex;
+  align-items: center;
+}
+.location-card {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.location-icon {
+  height: 20px;
+  width: 20px;
+  color: #ffffff;
+  margin-right: 5px;
+}
+.location-heading {
+  color: #cbd5e1;
+  font-family: roboto;
+}
+
+.employment-type-card {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.employment-type-icon {
+  height: 20px;
+  width: 20px;
+  color: #ffffff;
+  margin-right: 10px;
+}
+.employment-type-heading {
+  color: #cbd5e1;
+  font-family: roboto;
+}
+.package-heading {
+  color: #f1f5f9;
+  font-family: roboto;
+}
+.hr-line {
+  color: #cbd5e1;
+}
+/**/
+.description-container {
+}
+.description-heading {
+  color: white;
+  font-family: roboto;
+  font-size: 22px;
+}
+.description-paragraph {
+  color: #f1f5f9;
+  font-family: roboto;
+  font-size: 14px;
+}

@@ -233,3 +233,29 @@
     width: 70%;
   }
 }
+
+/**/
+.locationbased-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.locationbased-heading {
+  color: white;
+  font-family: roboto;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.locationbased-list-container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.locationbased-list {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}

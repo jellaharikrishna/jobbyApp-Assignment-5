@@ -21,4 +21,3 @@ const App = () => (
 )
 
 export default App
-// ccbp publish RJSCPAW11J hkjjobbyapp.ccbp.tech

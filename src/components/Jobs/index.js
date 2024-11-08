@@ -53,6 +53,29 @@ const salaryRangesList = [
   },
 ]
 
+const locationBasedList = [
+  {
+    locationName: 'Hyderabad',
+    locationId: 'HYDERABAD',
+  },
+  {
+    locationName: 'Bangalore',
+    locationId: 'BANGALORE',
+  },
+  {
+    locationName: 'Chennai',
+    locationId: 'CHENNAI',
+  },
+  {
+    locationName: 'Delhi',
+    locationId: 'DELHI',
+  },
+  {
+    locationName: 'Mumbai',
+    locationId: 'MUMBAI',
+  },
+]
+
 class Jobs extends Component {
   state = {
     searchInput: '',
@@ -61,6 +84,7 @@ class Jobs extends Component {
     profileDetails: {},
     empolymentList: [],
     salaryRange: '',
+    locationsList: [],
     jobsList: [],
   }
 
@@ -102,8 +126,8 @@ class Jobs extends Component {
   }
 
   renderLoaderView = () => (
-    <div className='loader-container' data-testid='loader'>
-      <Loader type='ThreeDots' color='#ffffff' height='50' width='50' />
+    <div className="loader-container" data-testid="loader">
+      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
 
@@ -112,19 +136,19 @@ class Jobs extends Component {
     const {imageUrl, name, shortBio} = profileDetails
 
     return (
-      <div className='profile-container'>
-        <img src={imageUrl} alt='profile' className='profile-image' />
-        <h1 className='profile-name'>{name}</h1>
-        <p className='profile-bio'>{shortBio}</p>
+      <div className="profile-container">
+        <img src={imageUrl} alt="profile" className="profile-image" />
+        <h1 className="profile-name">{name}</h1>
+        <p className="profile-bio">{shortBio}</p>
       </div>
     )
   }
 
   renderRetryView = () => (
-    <div className='retry-container'>
+    <div className="retry-container">
       <button
-        type='button'
-        className='retry-btn'
+        type="button"
+        className="retry-btn"
         onClick={() => this.getProfileDetails()}
       >
         Retry
@@ -152,9 +176,9 @@ class Jobs extends Component {
 
     this.setState({jobsApiStatus: apiStatusConstants.inProgress})
 
-    const {searchInput, empolymentList, salaryRange} = this.state
+    const {searchInput, empolymentList, salaryRange, locationsList} = this.state
 
-    const jobsApiUrl = `https://apis.ccbp.in/jobs?employment_type=${empolymentList}&minimum_package=${salaryRange}&search=${searchInput}`
+    const jobsApiUrl = `https://apis.ccbp.in/jobs?employment_type=${empolymentList}&minimum_package=${salaryRange}&location=${locationsList}&search=${searchInput}`
     const options = {
       method: 'GET',
       headers: {
@@ -194,23 +218,23 @@ class Jobs extends Component {
   renderMobileSearchInput = () => {
     const {searchInput} = this.state
     return (
-      <div className='mobile-search-input-container'>
+      <div className="mobile-search-input-container">
         <input
-          type='search'
+          type="search"
           value={searchInput}
-          className='search-input'
-          placeholder='Search'
+          className="search-input"
+          placeholder="Search"
           onChange={this.onChangeSearchInput}
           onKeyDown={this.onKeydownInput}
         />
         <button
-          type='button'
-          aria-label='close'
-          data-testid='searchButton'
-          className='search-icon-btn'
+          type="button"
+          aria-label="close"
+          data-testid="searchButton"
+          className="search-icon-btn"
           onClick={() => this.getJobsDetails()}
         >
-          <BsSearch className='search-icon' />
+          <BsSearch className="search-icon" />
         </button>
       </div>
     )
@@ -219,23 +243,23 @@ class Jobs extends Component {
   renderDesktopSearchInput = () => {
     const {searchInput} = this.state
     return (
-      <div className='desktop-search-input-container'>
+      <div className="desktop-search-input-container">
         <input
-          type='search'
+          type="search"
           value={searchInput}
-          className='search-input'
-          placeholder='Search'
+          className="search-input"
+          placeholder="Search"
           onChange={this.onChangeSearchInput}
           onKeyDown={this.onKeydownInput}
         />
         <button
-          type='button'
-          aria-label='close'
-          data-testid='searchButton'
-          className='search-icon-btn'
+          type="button"
+          aria-label="close"
+          data-testid="searchButton"
+          className="search-icon-btn"
           onClick={() => this.getJobsDetails()}
         >
-          <BsSearch className='search-icon' />
+          <BsSearch className="search-icon" />
         </button>
       </div>
     )
@@ -261,22 +285,22 @@ class Jobs extends Component {
   }
 
   renderTypeOfEmpolyment = () => (
-    <div className='employment-container'>
-      <hr className='hr-line' />
-      <h1 className='employment-heading'>Type of Employment</h1>
-      <ul className='employment-list-container'>
+    <div className="employment-container">
+      <hr className="hr-line" />
+      <h1 className="employment-heading">Type of Employment</h1>
+      <ul className="employment-list-container">
         {employmentTypesList.map(eachType => (
-          <li className='employment-list' key={eachType.employmentTypeId}>
+          <li className="employment-list" key={eachType.employmentTypeId}>
             <input
               value={eachType.label}
-              type='checkbox'
-              className='checkbox-input'
+              type="checkbox"
+              className="checkbox-input"
               id={eachType.employmentTypeId}
               onChange={this.onChangeEmploymentType}
             />
             <label
               htmlFor={eachType.employmentTypeId}
-              className='checkbox-label'
+              className="checkbox-label"
             >
               {eachType.label}
             </label>
@@ -292,26 +316,68 @@ class Jobs extends Component {
   }
 
   renderSalaryRange = () => (
-    <div className='salaryrange-container'>
-      <hr className='hr-line' />
-      <h1 className='salaryrange-heading'>Salary Range</h1>
-      <ul className='salaryrange-list-container'>
+    <div className="salaryrange-container">
+      <hr className="hr-line" />
+      <h1 className="salaryrange-heading">Salary Range</h1>
+      <ul className="salaryrange-list-container">
         {salaryRangesList.map(eachSalary => (
-          <li className='salaryrange-list' key={eachSalary.salaryRangeId}>
+          <li className="salaryrange-list" key={eachSalary.salaryRangeId}>
             <input
               value={eachSalary.label}
-              type='radio'
-              className='radio-input'
+              type="radio"
+              className="radio-input"
               id={eachSalary.salaryRangeId}
               onChange={this.onChangeSalaryRange}
-              name='choose'
+              name="choose"
             />
             <label
               htmlFor={eachSalary.salaryRangeId}
-              className='radio-label'
-              name='choose'
+              className="radio-label"
+              name="choose"
             >
               {eachSalary.label}
+            </label>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+
+  onChangeLocationName = event => {
+    const userLocationName = event.target.id
+    const {locationsList} = this.state
+
+    if (locationsList.includes(userLocationName)) {
+      const updatedList = locationsList.filter(
+        eachLocation => eachLocation !== userLocationName,
+      )
+      this.setState({locationsList: updatedList}, this.getJobsDetails)
+    } else {
+      this.setState(
+        prevState => ({
+          locationsList: [...prevState.locationsList, userLocationName],
+        }),
+        this.getJobsDetails,
+      )
+    }
+  }
+
+  renderLocationBased = () => (
+    <div className="locationbased-container">
+      <hr className="hr-line" />
+      <h1 className="locationbased-heading">Locations List</h1>
+      <ul className="locationbased-list-container">
+        {locationBasedList.map(eachLocation => (
+          <li className="locationbased-list" key={eachLocation.locationId}>
+            <input
+              value={eachLocation.locationName}
+              type="checkbox"
+              className="checkbox-input"
+              id={eachLocation.locationId}
+              onChange={this.onChangeLocationName}
+            />
+            <label htmlFor={eachLocation.locationId} className="checkbox-label">
+              {eachLocation.locationName}
             </label>
           </li>
         ))}
@@ -323,20 +389,20 @@ class Jobs extends Component {
     const {jobsList} = this.state
 
     return jobsList.length > 0 ? (
-      <ul className='jobslist-container'>
+      <ul className="jobslist-container">
         {jobsList.map(eachJob => (
           <JobItemCard key={eachJob.id} jobCardDetails={eachJob} />
         ))}
       </ul>
     ) : (
-      <div className='no-jobs-container'>
+      <div className="no-jobs-container">
         <img
-          className='no-jobs-img'
-          src='https://assets.ccbp.in/frontend/react-js/no-jobs-img.png'
-          alt='no jobs'
+          className="no-jobs-img"
+          src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
+          alt="no jobs"
         />
-        <h1 className='no-jobs-heading'>No Jobs Found</h1>
-        <p className='no-jobs-description'>
+        <h1 className="no-jobs-heading">No Jobs Found</h1>
+        <p className="no-jobs-description">
           We could not find any jobs. Try other filters
         </p>
       </div>
@@ -344,19 +410,19 @@ class Jobs extends Component {
   }
 
   renderFailureView = () => (
-    <div className='failure-view-container'>
+    <div className="failure-view-container">
       <img
-        className='failure-view-img'
-        src='https://assets.ccbp.in/frontend/react-js/failure-img.png'
-        alt='failure view'
+        className="failure-view-img"
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+        alt="failure view"
       />
-      <h1 className='failure-view-heading'>Oops! Something Went Wrong</h1>
-      <p className='failure-view-description'>
+      <h1 className="failure-view-heading">Oops! Something Went Wrong</h1>
+      <p className="failure-view-description">
         We cannot seem to find the page you are looking for.
       </p>
       <button
-        type='button'
-        className='retry-btn'
+        type="button"
+        className="retry-btn"
         onClick={() => this.getJobsDetails()}
       >
         Retry
@@ -382,15 +448,16 @@ class Jobs extends Component {
     return (
       <>
         <Header />
-        <div className='jobs-container'>
-          <div className='content-1'>
+        <div className="jobs-container">
+          <div className="content-1">
             {this.renderMobileSearchInput()}
             {this.renderingProfileApi()}
             {this.renderTypeOfEmpolyment()}
             {this.renderSalaryRange()}
+            {this.renderLocationBased()}
           </div>
 
-          <div className='content-2'>
+          <div className="content-2">
             {this.renderDesktopSearchInput()}
             {this.renderingJobsApi()}
           </div>

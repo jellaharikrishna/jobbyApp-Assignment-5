@@ -21,10 +21,3 @@ const App = () => (
 )
 
 export default App
-
-/* 
-"engines": {
-    "node": "^10.13 || 12 || 14 || 15",
-    "npm": ">=6"
-  },
-*/
